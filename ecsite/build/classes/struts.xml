@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<!-- Strutsの詳細設定 -->
+
+<struts>
+<constant name="struts.devMode" value="true" />
+<!-- 対象のpackageを設定 -->
+<package name="com.internousdev.ecsite.action" extends="struts-default">
+
+	<!-- GoHomeAction -->
+	<action name="GoHomeAction" class="com.internousdev.ecsite.action.GoHomeAction" method="execute">
+	<result name="success">home.jsp</result>
+	</action>
+
+	<!-- HomeAction -->
+	<action name="HomeAction" class="com.internousdev.ecsite.action.HomeAction" method="execute">
+	<result name="login">login.jsp</result>
+	<result name="success">buyItem.jsp</result>
+	<result name="administrator">administrator.jsp</result>
+	</action>
+
+	<!-- LoginAction -->
+	<action name="LoginAction" class="com.internousdev.ecsite.action.LoginAction" method="execute">
+	<result name="success">buyItem.jsp</result>
+	<result name="error">login.jsp</result>
+	<result name="administrator">administrator.jsp</result>
+	</action>
+
+	<!-- UserCreateAction -->
+	<action name="UserCreateAction" class="com.internousdev.ecsite.action.UserCreateAction" method="execute">
+	<result name="success">userCreate.jsp</result>
+	<result name="back">login.jsp</result>
+	</action>
+
+	<!-- UserCreateConfirmAction -->
+	<action name="UserCreateConfirmAction" class="com.internousdev.ecsite.action.UserCreateConfirmAction" method="execute">
+	<result name="success">userCreateConfirm.jsp</result>
+	<result name="error">userCreate.jsp</result>
+	</action>
+
+	<!-- UserCreateCompleteAction -->
+	<action name="UserCreateCompleteAction" class="com.internousdev.ecsite.action.UserCreateCompleteAction" method="execute">
+	<result name="success">userCreateComplete.jsp</result>
+	</action>
+
+	<!-- BuyItemAction -->
+	<action name="BuyItemAction" class="com.internousdev.ecsite.action.BuyItemAction" method="execute">
+	<result name="success">buyItemConfirm.jsp</result>
+	<result name="error">buyItem.jsp</result>
+	</action>
+
+	<!-- BuyItemConfirmAction -->
+	<action name="BuyItemConfirmAction" class="com.internousdev.ecsite.action.BuyItemConfirmAction" method="execute">
+	<result name="success">buyItemComplete.jsp</result>
+	<result name="back">buyItem.jsp</result>
+	</action>
+
+	<!-- MyPageAction -->
+	<action name="MyPageAction" class="com.internousdev.ecsite.action.MyPageAction" method="execute">
+	<result name="success">myPage.jsp</result>
+	<result name="error">error.jsp</result>
+	</action>
+
+	<!-- LogoutAction -->
+	<action name="LogoutAction" class="com.internousdev.ecsite.action.LogoutAction" method="execute">
+	<result name="success">home.jsp</result>
+	</action>
+
+	<!-- ItemChangeAction -->
+	<action name="ItemChangeAction" class="com.internousdev.ecsite.action.ItemChangeAction" method="execute">
+	<result name="success">itemChange.jsp</result>
+	<result name="error">error.jsp</result>
+	</action>
+
+	<!-- ItemChangeCreateAction -->
+	<action name="ItemChangeCreateAction" class="com.internousdev.ecsite.action.ItemChangeCreateAction" method="execute">
+	<result name="success">itemChangeCreate.jsp</result>
+	</action>
+
+	<!-- ItemChangeCreateConfirmAction -->
+	<action name="ItemChangeCreateConfirmAction" class="com.internousdev.ecsite.action.ItemChangeCreateConfirmAction" method="execute">
+	<result name="success">itemChangeCreateConfirm.jsp</result>
+	<result name="error">error.jsp</result>
+	</action>
+
+	<!-- ItemChangeCreateCompleteAction -->
+	<action name="ItemChangeCreateCompleteAction" class="com.internousdev.ecsite.action.ItemChangeCreateCompleteAction" method="execute">
+	<result name="success">itemChangeCreateComplete.jsp</result>
+	<result name="error">error.jsp</result>
+	</action>
+
+	<!-- ItemChangeChangeAction -->
+	<action name="ItemChangeChangeAction" class="com.internousdev.ecsite.action.ItemChangeChangeAction" method="execute">
+	<result name="success">itemChangeChange.jsp</result>
+	<result name="error">error.jsp</result>
+	</action>
+
+	<!-- ItemChangeChangeChangeAction -->
+	<action name="ItemChangeChangeChangeAction" class="com.internousdev.ecsite.action.ItemChangeChangeChangeAction" method="execute">
+	<result name="success">itemChangeChangeChange.jsp</result>
+	</action>
+
+	<!-- ItemChangeModificationConfirmAction -->
+	<action name="ItemChangeModificationConfirmAction" class="com.internousdev.ecsite.action.ItemChangeModificationConfirmAction" method="execute">
+	<result name="success">itemChangeModificationConfirm.jsp</result>
+	<result name="error">itemChangeChangeChange.jsp</result>
+	</action>
+
+	<!-- ItemChangeModificationCompleteAction -->
+	<action name="ItemChangeModificationCompleteAction" class="com.internousdev.ecsite.action.ItemChangeModificationCompleteAction" method="execute">
+	<result name="success">itemChangeModificationComplete.jsp</result>
+	</action>
+
+	<!-- UserChangeAction -->
+	<action name="UserChangeAction" class="com.internousdev.ecsite.action.UserChangeAction" method="execute">
+	<result name="success">userChange.jsp</result>
+	<result name="error">error.jsp</result>
+	</action>
+
+	<!-- UserChangeChangeAction -->
+	<action name="UserChangeChangeAction" class="com.internousdev.ecsite.action.UserChangeChangeAction" method="execute">
+	<result name="success">userChangeChange.jsp</result>
+	<result name="error">error.jsp</result>
+	</action>
+
+	<!-- UserChangeModificationAction -->
+	<action name="UserChangeModificationAction" class="com.internousdev.ecsite.action.UserChangeModificationAction" method="execute">
+	<result name="success">userChangeModification.jsp</result>
+	</action>
+
+	<!-- UserChangeModificationConfirmAction -->
+	<action name="UserChangeModificationConfirmAction" class="com.internousdev.ecsite.action.UserChangeModificationConfirmAction" method="execute">
+	<result name="success">userChangeModificationConfirm.jsp</result>
+	<result name="error">userChangeModification.jsp</result>
+	</action>
+
+	<!-- UserChangeModificationCompleteAction -->
+	<action name="UserChangeModificationCompleteAction" class="com.internousdev.ecsite.action.UserChangeModificationCompleteAction" method="execute">
+	<result name="success">userChangeModificationComplete.jsp</result>
+	</action>
+
+</package>
+</struts>
