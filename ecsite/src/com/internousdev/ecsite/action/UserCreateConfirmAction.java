@@ -1,9 +1,11 @@
 package com.internousdev.ecsite.action;
 
+import java.sql.SQLException;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.ecsite.dao.UserCreateConfirmDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserCreateConfirmAction extends ActionSupport implements SessionAware {
@@ -12,13 +14,19 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	private String userName;
 	private Map<String, Object> session;
 	private String errorMassage;
+	private UserCreateConfirmDAO userCreateConfirmDAO = new UserCreateConfirmDAO();
 
-	public String execute() {
+	public String execute() throws SQLException {
 		String result = SUCCESS;
 
 		if(!(loginUserId.equals(""))
 			&& !(loginPassword.equals(""))
 			&& !(userName.equals(""))) {
+			if(userCreateConfirmDAO.userCheck(loginUserId)) {
+				setErrorMassage("そのログインIDは既に使用されています。");
+				result = ERROR;
+			}
+
 			session.put("loginUserId", loginUserId);
 			session.put("loginPassword", loginPassword);
 			session.put("userName", userName);
@@ -26,6 +34,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 			setErrorMassage("未入力の項目があります。");
 			result = ERROR;
 		}
+
 		return result;
 	}
 
